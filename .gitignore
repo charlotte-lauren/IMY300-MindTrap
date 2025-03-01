@@ -1,0 +1,87 @@
+# Ignore unnecessary system files
+.DS_Store
+Thumbs.db
+
+# Ignore Unity auto-generated folders
+Library/
+Logs/
+Temp/
+UserSettings/
+MemoryCaptures/
+
+# Ignore build files
+Builds/
+Build/
+[Bb]uilds/
+[Bb]uild/
+
+# Ignore auto-generated IDE files
+*.csproj
+*.sln
+*.suo
+*.tmp
+*.user
+*.userprefs
+*.pidb
+*.booproj
+*.svd
+*.pdb
+*.opendb
+*.VC.db
+
+# Ignore .vscode settings
+.vscode/
+
+# Ignore Unity generated crash reports
+CrashReports/
+
+# Ignore package cache
+Packages/*/
+!Packages/manifest.json
+
+# Ignore local asset store packages
+Assets/AssetStoreTools*
+
+# Ignore Play Mode test results
+Assets/StreamingAssets/UnityPlayModeTestResults.xml
+
+# Ignore logs and crash dumps
+*.log
+*.dmp
+
+# Ignore Large File System temporary files
+.git/lfs/
+
+# Ignore Rider JetBrains files
+.idea/
+
+# Ignore ProBuilder auto-generated assets
+Assets/ProBuilderData/
+
+# Ignore Lighting Data
+Library/Lightmaps/
+Library/GI/
+
+# Ignore Addressables build data
+Assets/AddressableAssetsData/*/*.bin
+Assets/AddressableAssetsData/*/*.hash
+
+# Ignore compiled binaries
+*.dll
+*.exe
+*.so
+*.dylib
+*.apk
+*.aab
+*.ipa
+*.exp
+*.app
+
+# Ignore unity-generated text files
+*.asset
+*.meta
+*.mat
+*.prefab
+
+# Ignore Unity Collaborate temporary files
+.collab/
