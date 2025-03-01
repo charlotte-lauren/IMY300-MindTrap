@@ -9,7 +9,7 @@ public class Player : MonoBehaviour
     void Start()
     {
         // Assign a tag based on the playerID
-        gameObject.tag = "Player" + playerID;
+        gameObject.tag = "Playerrrr" + playerID;
 
         // Log the player's details for debugging
         Debug.Log("Player " + playerID + " (" + playerColor + ") initialized at position " + currentPosition);
