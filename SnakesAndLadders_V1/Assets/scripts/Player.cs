@@ -11,7 +11,8 @@ public class Player : MonoBehaviour
 
     private Transform[] boardPositions; // Array to store all board positions
     private static Dictionary<int, List<Player>> playersOnPosition = new Dictionary<int, List<Player>>(); // Track players on each position
-
+    [SerializeField] private AudioClip winnerAudio;
+    
     void Start()
     {
         // Assign a tag based on the playerID
@@ -63,7 +64,9 @@ public class Player : MonoBehaviour
 
         if (currentPosition == 100)
         {
-            UIManager.Instance.ShowWinScreen(playerID); // Show win screen
+            UIManager.Instance.ShowWinScreen(playerID  ); // Show win screen
+            
+            SoundFXManager.instance.PlaySoundFXClip(winnerAudio, transform, 1f);
         }
 
         // Adjust the position based on the number of players on the same position
