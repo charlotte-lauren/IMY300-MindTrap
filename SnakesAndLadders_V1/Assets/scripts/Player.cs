@@ -1,5 +1,7 @@
 using UnityEngine;
 using System.Collections.Generic;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
@@ -58,6 +60,11 @@ public class Player : MonoBehaviour
 
         // Move the player token to the new position
         Vector3 newPosition = boardPositions[currentPosition - 1].position;
+
+        if (currentPosition == 100)
+        {
+            UIManager.Instance.ShowWinScreen(playerID); // Show win screen
+        }
 
         // Adjust the position based on the number of players on the same position
         int playerCount = playersOnPosition[currentPosition].Count;

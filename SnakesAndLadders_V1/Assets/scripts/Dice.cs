@@ -30,7 +30,7 @@ public class Dice : MonoBehaviour
     private void RollDice()
     {
         isRolling = true;
-        diceResult = Random.Range(1, 7); // Generate a random number between 1 and 6
+        diceResult = Random.Range(1, 7); // Generate a random number between 1 and 6 
         Debug.Log("Dice rolled: " + diceResult);
 
         // Start the rolling animation
