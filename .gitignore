@@ -28,6 +28,9 @@ Build/
 *.pdb
 *.opendb
 *.VC.db
+*.cache
+*.vsconfig
+*.vsidx
 
 # Ignore .vscode settings
 .vscode/
