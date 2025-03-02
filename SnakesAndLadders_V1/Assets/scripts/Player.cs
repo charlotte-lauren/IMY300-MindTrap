@@ -9,9 +9,15 @@ public class Player : MonoBehaviour
     void Start()
     {
         // Assign a tag based on the playerID
-        gameObject.tag = "Playerrrr" + playerID;
+        gameObject.tag = "Player" + playerID;
 
         // Log the player's details for debugging
         Debug.Log("Player " + playerID + " (" + playerColor + ") initialized at position " + currentPosition);
+    }
+
+    // Method to move player to a new position (called by GameController)
+    public void MoveToPosition(Vector3 newPosition)
+    {
+        transform.position = newPosition;
     }
 }
