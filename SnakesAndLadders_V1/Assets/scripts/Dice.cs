@@ -31,6 +31,11 @@ public class Dice : MonoBehaviour
         isRolling = false;
         Debug.Log("Dice roll finished. Result: " + diceResult);
 
-        // Notify the game manager or player to move (we'll implement this later)
+        // Notify the current player to move
+        Player currentPlayer = GameManager.Instance.GetCurrentPlayer();
+        currentPlayer.Move(diceResult);
+
+        // End the current player's turn
+        GameManager.Instance.EndTurn();
     }
 }
