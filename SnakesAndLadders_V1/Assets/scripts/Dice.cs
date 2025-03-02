@@ -6,6 +6,8 @@ public class Dice : MonoBehaviour
     public int diceResult { get; private set; } // Stores the result of the dice roll
     public bool isRolling { get; private set; } // Tracks if the dice is currently rolling
 
+    [SerializeField] private AudioClip rollAudio;
+
     // Predefined rotations for each face of the dice
     private readonly Vector3[] faceRotations = new Vector3[]
     {
@@ -33,6 +35,9 @@ public class Dice : MonoBehaviour
 
         // Start the rolling animation
         StartCoroutine(RollingAnimation());
+
+        // sound
+        SoundFXManager.instance.PlaySoundFXClip(rollAudio, transform, 1f);
 
         // Simulate a short delay to mimic rolling
         Invoke("FinishRoll", 1.5f); // Wait 1.5 seconds before finishing the roll

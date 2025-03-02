@@ -6,6 +6,8 @@ public class SnakeOrLadder
 {
     public int startPosition; // Start position of the snake or ladder
     public int endPosition;   // End position of the snake or ladder
+
+    
 }
 
 public class GameManager : MonoBehaviour
@@ -17,6 +19,9 @@ public class GameManager : MonoBehaviour
 
     public SnakeOrLadder[] snakes; // Array of snakes
     public SnakeOrLadder[] ladders; // Array of ladders
+    [SerializeField] private AudioClip snakeSound;
+    
+    [SerializeField] private AudioClip ladderSound;
 
     private Dictionary<int, List<int>> positionToPlayers = new Dictionary<int, List<int>>(); // Tracks players on each position
 
@@ -65,6 +70,10 @@ public class GameManager : MonoBehaviour
             if (ladder.startPosition == position)
             {
                 Debug.Log("Ladder found! Moving from " + position + " to " + ladder.endPosition);
+                
+                // sound
+                SoundFXManager.instance.PlaySoundFXClip(ladderSound, transform, 1f);
+
                 return ladder.endPosition;
             }
         }
@@ -75,6 +84,10 @@ public class GameManager : MonoBehaviour
             if (snake.startPosition == position)
             {
                 Debug.Log("Snake found! Moving from " + position + " to " + snake.endPosition);
+                
+                // sound
+                SoundFXManager.instance.PlaySoundFXClip(snakeSound, transform, 1f);
+
                 return snake.endPosition;
             }
         }
