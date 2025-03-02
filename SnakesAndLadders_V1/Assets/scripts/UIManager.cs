@@ -1,6 +1,8 @@
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+//using TMPro;
+
 
 public class UIManager : MonoBehaviour
 {
@@ -8,8 +10,7 @@ public class UIManager : MonoBehaviour
 
     // Main Menu UI
     public GameObject mainMenuPanel;
-    public Dropdown playerCountDropdown;
-    public Toggle aiToggle;
+    //public TMP_Dropdown playerCountDropdown;
 
     // In-Game UI
     public GameObject inGameUIPanel;
@@ -34,14 +35,8 @@ public class UIManager : MonoBehaviour
 
     // MAIN MENU FUNCTIONS
     public void StartGame()
-    {
-        int playerCount = playerCountDropdown.value + 1; // Dropdown index starts at 0
-        bool isAIEnabled = aiToggle.isOn;
-
-        PlayerPrefs.SetInt("PlayerCount", playerCount);
-        PlayerPrefs.SetInt("AIEnabled", isAIEnabled ? 1 : 0);
-
-        SceneManager.LoadScene("Game"); // Load the game scene
+    { 
+            SceneManager.LoadScene("Game"); // Load the game scene
     }
 
     public void QuitGame()
@@ -73,7 +68,10 @@ public class UIManager : MonoBehaviour
     // WIN SCREEN FUNCTIONS
     public void ShowWinScreen(int playerID)
     {
-        winScreenPanel.SetActive(true);
-        winnerText.text = "Player " + playerID + " Wins!";
+        if (winScreenPanel != null)
+            winScreenPanel.SetActive(true);
+
+        if (winnerText != null)
+            winnerText.text = "Player " + playerID + " Wins!";
     }
 }

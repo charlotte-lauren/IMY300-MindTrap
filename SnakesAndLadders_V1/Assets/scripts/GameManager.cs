@@ -1,4 +1,6 @@
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 [System.Serializable]
 public class SnakeOrLadder
@@ -50,9 +52,10 @@ public class GameManager : MonoBehaviour
         Player currentPlayer = players[currentPlayerIndex];
         if (currentPlayer.currentPosition == 100)
         {
-            UIManager.Instance.ShowWinScreen(currentPlayer.playerID);
+            UIManager.Instance.ShowWinScreen(currentPlayer.playerID); // Show win screen
         }
     }
+
 
 
     public Player GetCurrentPlayer()
