@@ -33,16 +33,27 @@ public class GameManager : MonoBehaviour
 
     public void StartGame()
     {
-        // Initialize the game
         Debug.Log("Game started! Player 1's turn.");
+        UIManager.Instance.UpdateTurnIndicator(1);
     }
 
     public void EndTurn()
     {
-        // Move to the next player
         currentPlayerIndex = (currentPlayerIndex + 1) % players.Length;
         Debug.Log("It's now Player " + (currentPlayerIndex + 1) + "'s turn.");
+
+        //UIManager.Instance.UpdateTurnIndicator(currentPlayerIndex + 1);
     }
+
+    public void CheckWinCondition()
+    {
+        Player currentPlayer = players[currentPlayerIndex];
+        if (currentPlayer.currentPosition == 100)
+        {
+            UIManager.Instance.ShowWinScreen(currentPlayer.playerID);
+        }
+    }
+
 
     public Player GetCurrentPlayer()
     {
