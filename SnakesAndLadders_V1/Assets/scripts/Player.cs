@@ -32,7 +32,7 @@ public class Player : MonoBehaviour
         // }
         // playersOnPosition[currentPosition].Add(this);
 
-        transform.position = boardPositions[currentPosition].position;
+        // transform.position = boardPositions[currentPosition].position;
     }
 
     public void Move(int spaces)
