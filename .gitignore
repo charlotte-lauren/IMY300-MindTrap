@@ -28,6 +28,9 @@ Build/
 *.pdb
 *.opendb
 *.VC.db
+*.cache
+*.vsconfig
+*.vsidx
 
 # Ignore .vscode settings
 .vscode/
@@ -79,9 +82,16 @@ Assets/AddressableAssetsData/*/*.hash
 
 # Ignore unity-generated text files
 *.asset
-*.meta
 *.mat
-*.prefab
+
+# Allow specific project setting files
+!ProjectSettings/TagManager.asset
+!ProjectSettings/InputManager.asset
+!ProjectSettings/QualitySettings.asset
+!ProjectSettings/EditorBuildSettings.asset
 
 # Ignore Unity Collaborate temporary files
 .collab/
+
+
+.plastic/
