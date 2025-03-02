@@ -79,7 +79,6 @@ Assets/AddressableAssetsData/*/*.hash
 
 # Ignore unity-generated text files
 *.asset
-*.meta
 *.mat
 
 # Ignore Unity Collaborate temporary files
