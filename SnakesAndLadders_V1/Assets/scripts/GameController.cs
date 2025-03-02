@@ -17,7 +17,7 @@ public class GameController : MonoBehaviour
     void Update()
     {
         // Check if the current player has finished moving
-        if (!isPlayerMoving && !dice.isRolling)
+        if (!isPlayerMoving && !dice.IsRolling)
         {
             if (Input.GetKeyDown(KeyCode.Space)) // Press Space to roll the dice
             {

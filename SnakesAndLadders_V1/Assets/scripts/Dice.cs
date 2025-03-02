@@ -3,8 +3,8 @@ using System.Collections;
 
 public class Dice : MonoBehaviour
 {
-    public int diceResult { get; private set; } // Stores the result of the dice roll
-    public bool isRolling { get; private set; } // Tracks if the dice is currently rolling
+    public int DiceResult { get; private set; } // Stores the result of the dice roll
+    public bool IsRolling { get; private set; } // Tracks if the dice is currently rolling
 
     // Predefined rotations for each face of the dice
     private readonly Vector3[] faceRotations = new Vector3[]
@@ -17,19 +17,23 @@ public class Dice : MonoBehaviour
         new Vector3(180, 0, 0)   // Face 6
     };
 
-    private void OnMouseDown()
+    public void OnMouseDown()
     {
-        if (!isRolling) // Ensure the dice isn't already rolling
+        if (!IsRolling) // Ensure the dice isn't already rolling
         {
             RollDice();
         }
     }
+    public void SetDiceResult(int result)
+    {
+        DiceResult = result;
+    }
 
     private void RollDice()
     {
-        isRolling = true;
-        diceResult = Random.Range(1, 7); // Generate a random number between 1 and 6
-        Debug.Log("Dice rolled: " + diceResult);
+        IsRolling = true;
+        DiceResult = Random.Range(1, 7); // Generate a random number between 1 and 6
+        Debug.Log("Dice rolled: " + DiceResult);
 
         // Start the rolling animation
         StartCoroutine(RollingAnimation());
@@ -60,17 +64,17 @@ public class Dice : MonoBehaviour
     private void AlignDiceToFace()
     {
         // Set the dice rotation to the corresponding face based on diceResult
-        transform.rotation = Quaternion.Euler(faceRotations[diceResult - 1]);
+        transform.rotation = Quaternion.Euler(faceRotations[DiceResult - 1]);
     }
 
     private void FinishRoll()
     {
-        isRolling = false;
-        Debug.Log("Dice roll finished. Result: " + diceResult);
+        IsRolling = false;
+        Debug.Log("Dice roll finished. Result: " + DiceResult);
 
         // Notify the current player to move
         Player currentPlayer = GameManager.Instance.GetCurrentPlayer();
-        currentPlayer.Move(diceResult);
+        currentPlayer.Move(DiceResult);
 
         // End the current player's turn
         GameManager.Instance.EndTurn();
