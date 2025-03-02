@@ -81,7 +81,9 @@ Assets/AddressableAssetsData/*/*.hash
 *.asset
 *.meta
 *.mat
-*.prefab
 
 # Ignore Unity Collaborate temporary files
 .collab/
+
+
+.plastic/
