@@ -84,6 +84,12 @@ Assets/AddressableAssetsData/*/*.hash
 *.asset
 *.mat
 
+# Allow specific project setting files
+!ProjectSettings/TagManager.asset
+!ProjectSettings/InputManager.asset
+!ProjectSettings/QualitySettings.asset
+!ProjectSettings/EditorBuildSettings.asset
+
 # Ignore Unity Collaborate temporary files
 .collab/
 
